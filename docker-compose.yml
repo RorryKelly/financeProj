@@ -1,0 +1,48 @@
+version: '4.40.0'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    networks: 
+      - db
+    volumes:
+      - db:/var/lib/pgsql/data
+    ports:
+      - "5156:5432"
+    
+
+  api:
+    image: financeProj/api
+    build:
+      context: src/Api
+      dockerfile: DockerFile
+    networks: 
+      - db
+    ports:
+      - "5155:8080"
+    depends_on:
+      - db
+  
+  Blazor:
+    image: financeProj/blazor
+    build:
+      context: src/Blazor
+      dockerfile: DockerFile
+    networks: 
+      - db
+    ports:
+      - "80:8080"
+    depends_on:
+      - db
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  db:
+    

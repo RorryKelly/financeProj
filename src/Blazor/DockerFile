@@ -1,0 +1,18 @@
+FROM mcr.microsoft.com/dotnet/sdk:9.0 AS base
+WORKDIR /src
+EXPOSE 8080
+
+FROM base AS build
+WORKDIR /src
+COPY ./ .
+RUN dotnet restore
+RUN dotnet build -c Release
+
+
+FROM build AS publish
+RUN dotnet publish -c .
+
+FROM base as final
+WORKDIR /src
+COPY --from=publish /src/bin/net9.0/publish .
+ENTRYPOINT ["dotnet", "Blazor.dll"]

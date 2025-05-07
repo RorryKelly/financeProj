@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "b25uCCo5de4=",
+  "success": true,
+  "projectFilePath": "/home/rorry/Documents/repos/financeProj/src/Backend/Backend.csproj",
+  "expectedPackageFiles": [
+    "/home/rorry/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "/home/rorry/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
+    "/home/rorry/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.4/microsoft.aspnetcore.app.ref.9.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

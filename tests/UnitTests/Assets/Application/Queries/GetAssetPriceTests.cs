@@ -1,5 +1,6 @@
 using Backend.Assets.Application.AssetPrice;
 using Backend.Assets.Domain;
+using Backend.Assets.Infra;
 using Backend.Assets.Interfaces;
 using Moq;
 

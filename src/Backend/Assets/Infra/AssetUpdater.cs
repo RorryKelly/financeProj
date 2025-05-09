@@ -1,10 +1,19 @@
 using Backend.Assets.Domain;
+using Backend.Assets.Interfaces;
 
 namespace Backend.Assets.Infra;
 
-public class AssetUpdaterHandler : IAssetUpdater
+public class AssetUpdater : IAssetUpdater
 {
-    HttpClient client = new HttpClient();
+    HttpClient client;
+
+    IPriceFeedResponseMapper priceFeedResponseMapper;
+
+    public AssetUpdater(HttpClient httpClient, IPriceFeedResponseMapper mapper)
+    {
+        client = httpClient;
+        priceFeedResponseMapper = mapper;
+    }
 
     public async Task<decimal> Handle(Asset asset)
     {
@@ -12,6 +21,17 @@ public class AssetUpdaterHandler : IAssetUpdater
 
         HttpResponseMessage response = await client.GetAsync(source);
 
-        return 0.00m;
+        string resJson = await response.Content.ReadAsStringAsync();
+
+        priceFeedResponseMapper.Map(resJson, asset);
+
+        decimal? newPrice = asset.getPrice();
+
+        if (!newPrice.HasValue)
+        {
+            return -1;
+        }
+
+        return newPrice.Value;
     }
 }

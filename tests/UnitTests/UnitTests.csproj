@@ -25,4 +25,10 @@
     <ProjectReference Include="..\..\src\Backend\Backend.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="Assets\Infra\Mappers\PriceFeeds\Payloads\*.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup> 
+
 </Project>

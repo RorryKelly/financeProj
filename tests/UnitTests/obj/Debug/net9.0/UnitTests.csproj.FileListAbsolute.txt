@@ -111,3 +111,4 @@
 /home/rorry/Documents/repos/financeProj/tests/UnitTests/bin/Debug/net9.0/Backend.pdb
 /home/rorry/Documents/repos/financeProj/tests/UnitTests/bin/Debug/net9.0/Castle.Core.dll
 /home/rorry/Documents/repos/financeProj/tests/UnitTests/bin/Debug/net9.0/Moq.dll
+/home/rorry/Documents/repos/financeProj/tests/UnitTests/bin/Debug/net9.0/Assets/Infra/Mappers/PriceFeeds/Payloads/FinnHubPriceFeedPayload.txt

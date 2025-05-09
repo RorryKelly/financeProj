@@ -1,5 +1,3 @@
-version: '4.40.0'
-
 services:
   db:
     image: postgres
@@ -7,32 +5,31 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
-    networks: 
+    networks:
       - db
     volumes:
       - db:/var/lib/pgsql/data
     ports:
       - "5156:5432"
-    
 
-  api:
-    image: financeProj/api
+  asset:
+    image: financeProj/asset
     build:
-      context: src/Api
+      context: src/AssetService
       dockerfile: DockerFile
-    networks: 
+    networks:
       - db
     ports:
-      - "5155:8080"
+      - "5159:8080"
     depends_on:
       - db
-  
-  Blazor:
-    image: financeProj/blazor
+
+  finance-app:
+    image: financeProj/finance-app
     build:
-      context: src/Blazor
+      context: src/FinanceApp
       dockerfile: DockerFile
-    networks: 
+    networks:
       - db
     ports:
       - "80:8080"
@@ -45,4 +42,3 @@ networks:
 
 volumes:
   db:
-    

@@ -1,7 +1,0 @@
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/Blazor
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/appsettings.Development.json
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/appsettings.json
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/Blazor.dll
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/Blazor.deps.json
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/Blazor.runtimeconfig.json
-/home/rorry/Documents/repos/financeProj/src/Blazor/bin/net9.0/publish/Blazor.pdb
